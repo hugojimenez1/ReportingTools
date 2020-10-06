@@ -6,9 +6,9 @@
 	"category": "Deploy",
     "author": "Hugo Jimenez",
     "version": {
-        "Major": 8,
+        "Major": 4,
         "Minor": 0,
-        "Patch": 2
+        "Patch": 3
     },
     "minimumAgentVersion": "2.131.0",
     "instanceNameFormat": "Reporting Deploy",

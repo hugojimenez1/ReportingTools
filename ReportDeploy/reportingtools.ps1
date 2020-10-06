@@ -126,7 +126,7 @@ function DeployDataSources()
         Write-Host "Creating DataSource $DataSourceFolder/$($o.BaseName)…";
 
 
-        [xml]$XmlDataSourceDefinition = Get-Content $o.FullName -Encoding ASCII; 
+        [xml]$XmlDataSourceDefinition = Get-Content $o.FullName -Encoding UTF8; 
 		
         
         $xmlDataSourceName = $XmlDataSourceDefinition.RptDataSource | where {$_ | get-member ConnectionProperties};
@@ -202,7 +202,7 @@ function DeployDataSet()
         #relink dataset to datasource
 
         Write-Host "Updating Datasource reference";
-        [xml]$XmlDataSetDefinition = Get-Content $o.FullName -Encoding ASCII;
+        [xml]$XmlDataSetDefinition = Get-Content $o.FullName -Encoding UTF8;
         $xmlDataSourceReference = $XmlDataSetDefinition.SharedDataSet.DataSet | where {$_ | get-member Query};
 
         try{ 
@@ -255,7 +255,7 @@ function DeployReports()
     {
         Write-Host "Reporte #$($totalReportes)"
 		
-	    [xml]$xmlreport = Get-Content $o.FullName -Encoding ASCII; 
+	    [xml]$xmlreport = Get-Content $o.FullName -Encoding UTF8; 
 
 		
 		
@@ -332,7 +332,7 @@ function DeployReports()
         #relink report to shared datasets
         Write-Host "Updating DataSet references";
 
-        [xml]$XmlReportDefinition = Get-Content $o.FullName -Encoding ASCII;
+        [xml]$XmlReportDefinition = Get-Content $o.FullName -Encoding UTF8;
 
 
         if ($XmlReportDefinition.Report.DataSets.Dataset.count > 0)
