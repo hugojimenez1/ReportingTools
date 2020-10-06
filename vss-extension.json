@@ -1,0 +1,49 @@
+{
+    "manifestVersion": 1,
+    "id": "HugoJimenez2020",
+    "name": "Reporting tools",
+    "version": "1.0.24",
+    "publisher": "HugoJimenez2020",
+	  "public": true,
+  "galleryFlags": [
+    "Public"
+  ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Herramienta que contiene una tarea para realizar despliegues automaticos de reportes.",
+    "categories": [
+        "Azure Pipelines"
+		
+		
+    ],
+    "icons": {
+        "default": "images/report.png",
+        "large": "images/report.png"		
+    },
+	 "content": {
+    "details": {
+        "path": "README.md"
+    }
+  },
+    "files": [
+        {
+            "path": "ReportDeploy"
+        }
+    ],
+	 
+    "contributions": [
+        {
+            "id": "HugoJimenez2020",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "ReportDeploy"
+            }
+        }
+    ]
+}
